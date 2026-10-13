@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact — Justin Chanthabandith</title>
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <nav>
         <a href="../">Home</a>
         <a href="../projects/">Projects</a>
-        <a href="../contact/">Contact</a>
+        <a href="../contact/" class="current" aria-current="page">Contact</a>
         <a href="../resume/">Resume</a>
         <a href="https://github.com/thejustinrock"
            target="_blank"
@@ -20,32 +20,13 @@
     <h1>Contact</h1>
     <p>Use the form below to contact me.</p>
 
-    <form action="mailto:YOUR_EMAIL@example.com"
-          method="POST"
-          enctype="text/plain">
-
-        <p>
-            <label>
-                Your email:
-                <input type="email" name="email">
-            </label>
-        </p>
-
-        <p>
-            <label>
-                Subject:
-                <input type="text" name="subject">
-            </label>
-        </p>
-
-        <p>
-            <label>
-                Message:
-                <textarea name="body" rows="5"></textarea>
-            </label>
-        </p>
-
-        <button type="submit">Send</button>
+    <form action="mailto:suksavahn1999@gmail.com" method="POST" enctype="text/plain">
+        <label>Your email: <input type="email" name="email" autocomplete="email" required></label>
+        <label>Subject: <input type="text" name="subject" required></label>
+        <label>Message: <textarea name="body" rows="6" required></textarea></label>
+        <button type="submit">Send message</button>
     </form>
+    <p>This form opens your email app. You can also email <a href="mailto:suksavahn1999@gmail.com">suksavahn1999@gmail.com</a> directly.</p>
+    <footer>Justin Chanthabandith · Data Engineering &amp; Data Science</footer>
 </body>
 </html>
