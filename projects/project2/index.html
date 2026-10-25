@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project 2: Education — Justin Chanthabandith</title>
+<link rel="stylesheet" href="../../style.css">
+<script type="module" src="../../global.js"></script>
+<style>
+.report section {margin-block:3rem}.report h1{font-size:clamp(2.2rem,5vw,3.5rem)}
+.report figure{margin:1.5rem 0}.report figure img{width:100%;background:white;border:1px solid var(--color-border);border-radius:.5rem}
+.report figcaption,.byline{color:var(--color-muted);font-size:.95rem}.report li{margin-block:.8rem}
+.proposition{padding:1.25rem;border-left:4px solid #b52b35;background:var(--color-surface)}
+.kicker{text-transform:uppercase;letter-spacing:.12em;font-size:.8rem;font-weight:700}
+.report h2{padding-bottom:.6rem;border-bottom:1px solid var(--color-border)}
+</style>
+</head>
+<body>
+<main class="report">
+<p class="kicker">Project 2 · Persuasive or Deceptive Visualization?</p>
+<h1>How close were we to education for everyone?</h1>
+<p class="byline">Justin Chanthabandith · UCSD email: j1chanthabandith@ucsd.edu</p>
+<div class="proposition"><h2>Proposition</h2><p>By 2019, access to secondary education was close to universal.</p></div>
+<p>These two visualizations use the same World Bank education indicator but emphasize different parts of the story. The first focuses on the worldwide majority in school. The second focuses on the gap between income groups.</p>
+<p><strong>About the measure:</strong> The indicator is “Adolescents out of school (% of lower secondary school age).” I calculate the in-school share as 100 minus the out-of-school percentage. Being in school does not establish enrollment specifically in secondary education, attendance, completion, or learning quality. This is a limitation of using this measure to evaluate my proposition.</p>
+<section aria-labelledby="for-title">
+<p class="kicker">FOR the proposition</p><h2 id="for-title">Most adolescents were already in school</h2>
+<figure><img src="for-education.png" width="1980" alt="Stacked bar showing about 84.7 percent of lower-secondary-school-age adolescents worldwide in school in 2019, with about 15.3 percent out of school."><figcaption>Worldwide, about 84.7% of lower-secondary-school-age adolescents were in school in 2019. The large enrolled share supports an optimistic interpretation of education access.</figcaption></figure>
+<h3>Design Decisions and Rationale</h3>
+<ul>
+<li><strong>Calculated field:</strong> I subtract the out-of-school rate from 100. This presents the same information through participation, which makes the result feel more positive.</li>
+<li><strong>Part-to-whole encoding:</strong> A stacked bar uses a full 0–100% scale to show how much of the population was in school. The large lower section makes the majority easy to see while keeping the excluded share visible.</li>
+<li><strong>Color and labels:</strong> Green highlights participation, while gray gives less emphasis to adolescents out of school. Labels inside both sections show the percentages directly and avoid making readers estimate them.</li>
+<li><strong>Global aggregation:</strong> I use the dataset’s World aggregate rather than averaging country percentages. This gives one clear worldwide summary, but it hides differences between income groups.</li>
+<li><strong>Persuasive framing:</strong> “Nearly 85%” emphasizes the majority. Interpreting that share as “close to universal” is subjective: about 15% were still excluded. The chart supports the proposition through framing, rather than proving it.</li>
+</ul></section>
+<section aria-labelledby="against-title">
+<p class="kicker">AGAINST the proposition</p><h2 id="against-title">A global average hides unequal access</h2>
+<figure><img src="against-education.png" width="1980" alt="Bar chart showing out-of-school rates in 2019 of about 2.5 percent for high-income countries, 15.3 percent worldwide, and 36.9 percent for low-income countries."><figcaption>About 36.9% of adolescents in low-income countries were out of school in 2019, compared with about 2.5% in high-income countries. The difference was roughly 34.4 percentage points.</figcaption></figure>
+<h3>Design Decisions and Rationale</h3>
+<ul>
+<li><strong>Comparison by position and length:</strong> The bars share a zero baseline, so their heights make the differences easy to compare. Ordering high income, World, and low income creates a clear progression toward the largest excluded share.</li>
+<li><strong>Negative framing:</strong> I show the out-of-school percentage instead of its complement. This focuses attention on who was left out and challenges the idea of universal access.</li>
+<li><strong>Color emphasis:</strong> Red draws attention to the low-income group. Gray keeps the high-income group and worldwide reference visible without competing with the main point.</li>
+<li><strong>Scale and annotation:</strong> The vertical axis runs from 0 to 45%, giving the differences more visual space than the first chart’s 0–100% scale. Direct percentage labels keep the values explicit. Readers should compare the labeled rates rather than bar heights across the two charts.</li>
+<li><strong>Selection and derived comparison:</strong> I filter to 2019 and select the highest and lowest income groups, with World as a reference. Subtracting 2.5 from 36.9 gives an approximately 34.4-percentage-point gap using rounded values. Choosing the extremes emphasizes inequality and leaves out middle-income groups. World overlaps with the income categories; the three bars are not additive.</li>
+</ul></section>
+<section aria-labelledby="reflection"><h2 id="reflection">Final Reflection</h2>
+<p>Working with the same data showed me how much presentation can change the message. In the first chart, the large green section makes school participation look widespread. In the second chart, the red bar makes it clear that many adolescents in low-income countries were still out of school. Neither chart changes the underlying percentages, but each directs attention to a different part of the data.</p>
+<p>I find the argument against the proposition more convincing. A global participation rate of about 84.7% is a large majority, but it still leaves about 15.3% out of school. The low-income rate of about 36.9% makes the phrase “close to universal” harder to defend. I also cannot use this indicator alone to claim that adolescents had access specifically to secondary education, since it measures whether adolescents of a particular age were out of school.</p>
+<p>For me, persuasion becomes misleading when a chart encourages a conclusion that its data cannot support, or hides information that would change the reader’s interpretation. Positive colors, selected groups, and different scales can all influence the story without changing any numbers. Explaining those choices, keeping the excluded share visible, and identifying the measure’s limitations help readers judge the argument for themselves. A fuller account would include middle-income groups and trends over time.</p>
+</section>
+<section><h2>Data and Methods</h2>
+<p>Source: World Bank Indicators course dataset, <code>education.csv</code>. Both visualizations use the 2019 observations already plotted in my checkpoint notebook. Income groups and World are existing aggregate rows in the dataset; I do not recompute them from country-level rates. Percentages are rounded to one decimal place.</p>
+<p><a href="DSC_209R_Project_2_Checkpoint.ipynb" download>Download the checkpoint notebook and chart code</a> · <a href="https://data.worldbank.org/indicator/SE.SEC.UNER.LO.ZS">World Bank indicator reference</a></p>
+</section>
+</main><footer>Justin Chanthabandith · Project 2 · Education</footer>
+</body></html>
