@@ -65,3 +65,60 @@ form?.addEventListener('submit', event => {
   }
   location.href = `${form.action}?${params.join('&')}`;
 });
+
+
+// Shared Lab 4 data and rendering helpers.
+export async function fetchJSON(url) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(`Failed to fetch ${url}: ${response.status} ${response.statusText}`);
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching or parsing JSON data:', error);
+    throw error;
+  }
+}
+
+export function renderProjects(projects, containerElement, headingLevel = 'h2') {
+  if (!(containerElement instanceof Element)) throw new TypeError('A project container is required.');
+  if (!Array.isArray(projects)) throw new TypeError('Projects must be an array.');
+  const tag = /^h[1-6]$/.test(headingLevel) ? headingLevel : 'h2';
+  containerElement.replaceChildren();
+  if (!projects.length) {
+    containerElement.textContent = 'No projects to display yet.';
+    return;
+  }
+  for (const project of projects) {
+    const article = document.createElement('article');
+    const heading = document.createElement(tag);
+    heading.textContent = project.title || 'Untitled project';
+    if (project.url) {
+      const link = document.createElement('a');
+      link.href = new URL(project.url, siteRoot);
+      link.textContent = heading.textContent;
+      heading.replaceChildren(link);
+    }
+    article.append(heading);
+    if (project.image) {
+      const image = document.createElement('img');
+      image.src = new URL(project.image, siteRoot).href;
+      image.alt = heading.textContent;
+      image.loading = 'lazy';
+      image.addEventListener('error', () => image.remove(), { once: true });
+      article.append(image);
+    } else {
+      article.classList.add('text-only');
+    }
+    const description = document.createElement('p');
+    const year = document.createElement('span');
+    year.className = 'project-year';
+    year.textContent = `${project.year ?? 'Year not specified'}${project.placeholder ? ' · Placeholder' : ''}`;
+    description.append(year, document.createTextNode(project.description || 'Description coming soon.'));
+    article.append(description);
+    containerElement.append(article);
+  }
+}
+
+export async function fetchGitHubData(username) {
+  return fetchJSON(`https://api.github.com/users/${encodeURIComponent(username)}`);
+}

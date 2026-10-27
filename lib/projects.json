@@ -1,0 +1,86 @@
+[
+  {
+    "title": "Project 2: Education Access",
+    "year": 2026,
+    "image": "projects/project2/against-education.png",
+    "description": "Two visualizations argue for and against the same proposition about education access.",
+    "url": "projects/project2/"
+  },
+  {
+    "title": "Lab 4: JavaScript II",
+    "year": 2026,
+    "image": "",
+    "description": "A project exploring data analysis and visualization techniques. More details coming soon.",
+    "placeholder": true
+  },
+  {
+    "title": "Lab 3: JavaScript Interactions",
+    "year": 2026,
+    "image": "",
+    "description": "A project exploring data analysis and visualization techniques. More details coming soon.",
+    "placeholder": true
+  },
+  {
+    "title": "Lab 2: Portfolio Styling",
+    "year": 2026,
+    "image": "",
+    "description": "A project exploring data analysis and visualization techniques. More details coming soon.",
+    "placeholder": true
+  },
+  {
+    "title": "Lab 1: Portfolio Structure",
+    "year": 2026,
+    "image": "",
+    "description": "A project exploring data analysis and visualization techniques. More details coming soon.",
+    "placeholder": true
+  },
+  {
+    "title": "Food Processing Scores",
+    "year": 2026,
+    "image": "",
+    "description": "A project exploring data analysis and visualization techniques. More details coming soon.",
+    "placeholder": true
+  },
+  {
+    "title": "World Bank Indicators Exploration",
+    "year": 2026,
+    "image": "",
+    "description": "A project exploring data analysis and visualization techniques. More details coming soon.",
+    "placeholder": true
+  },
+  {
+    "title": "SQL Data Validation",
+    "year": 2025,
+    "image": "",
+    "description": "A project exploring data analysis and visualization techniques. More details coming soon.",
+    "placeholder": true
+  },
+  {
+    "title": "ETL Pipeline Design",
+    "year": 2025,
+    "image": "",
+    "description": "A project exploring data analysis and visualization techniques. More details coming soon.",
+    "placeholder": true
+  },
+  {
+    "title": "Data Quality Dashboard",
+    "year": 2025,
+    "image": "",
+    "description": "A project exploring data analysis and visualization techniques. More details coming soon.",
+    "placeholder": true
+  },
+  {
+    "title": "Python Data Exploration",
+    "year": 2024,
+    "image": "",
+    "description": "A project exploring data analysis and visualization techniques. More details coming soon.",
+    "placeholder": true
+  },
+  {
+    "title": "Database Design",
+    "year": 2024,
+    "image": "",
+    "description": "A project exploring data analysis and visualization techniques. More details coming soon.",
+    "placeholder": true
+  }
+]

@@ -46,3 +46,15 @@ button:hover { background: light-dark(#505050, #bfbfbf); }
 .color-scheme { position: absolute; top: 1rem; right: 1rem; display: flex; align-items: center; gap: .5rem; font-size: 80%; }
 .color-scheme select { padding: .35em .5em; border: 1px solid var(--color-border); border-radius: .35rem; color: inherit; background: var(--color-surface); }
 select:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
+
+/* Lab 4: reusable project cards and live GitHub statistics. */
+.projects h3 { margin: 0; font-size: 1.35rem; }
+.projects img { aspect-ratio: 8 / 5; object-fit: contain; background: #e8e8e8; }
+.project-year { display: block; margin-bottom: .5rem; font-size: .85rem; color: var(--color-muted); }
+#profile-stats { padding: 1.25rem; border: 1px solid var(--color-border); border-radius: .75rem; background: var(--color-surface); }
+#profile-stats dl { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .5rem 1rem; margin: 0; text-align: center; }
+#profile-stats dt { grid-row: 1; color: var(--color-muted); font-size: .85rem; }
+#profile-stats dd { grid-row: 2; margin: 0; font-size: 1.8rem; font-weight: 650; }
+@media (max-width: 30rem) { #profile-stats dl { gap: .5rem; } #profile-stats dt { font-size: .7rem; } #profile-stats dd { font-size: 1.35rem; } }
+
+.projects article.text-only { display: flex; flex-direction: column; }
