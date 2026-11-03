@@ -58,3 +58,23 @@ select:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3
 @media (max-width: 30rem) { #profile-stats dl { gap: .5rem; } #profile-stats dt { font-size: .7rem; } #profile-stats dd { font-size: 1.35rem; } }
 
 .projects article.text-only { display: flex; flex-direction: column; }
+
+/* Lab 5: interactive categorical visualization. */
+.chart-help, #filter-status { color: var(--color-muted); }
+.chart-container { display: flex; align-items: center; gap: 2rem; margin-block: 1.5rem; }
+#projects-pie-plot { width: min(100%, 18rem); max-width: 20em; flex: 0 1 18rem; overflow: visible; }
+#projects-pie-plot path { cursor: pointer; transition: opacity 300ms, fill 300ms; stroke: canvas; stroke-width: .6; }
+#projects-pie-plot:has(path:hover) path:not(:hover) { opacity: .5; }
+#projects-pie-plot path:focus-visible { outline: none; stroke: canvastext; stroke-width: 1.5; }
+.legend { flex: 1; display: grid; grid-template-columns: repeat(auto-fill, minmax(9em, 1fr)); gap: 1rem; list-style: none; padding: 1rem; margin: 0; border: 1px solid var(--color-border); border-radius: .75rem; }
+.legend-item button { display: flex; align-items: center; gap: .6rem; width: 100%; padding: .6rem; background: transparent; color: inherit; text-align: left; border: 2px solid transparent; }
+.legend-item button:hover { background: var(--color-surface); }
+.swatch { display: inline-block; width: 1em; aspect-ratio: 1; flex-shrink: 0; border-radius: .2em; background: var(--color); }
+.selected { --color: #e83e8c !important; }
+#projects-pie-plot path.selected { fill: var(--color); stroke: canvastext; stroke-width: 1; }
+.legend-item.selected button { border-color: var(--color); font-weight: 700; }
+.filter-summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+#clear-filters { flex-shrink: 0; padding: .5em .8em; }
+button:disabled { opacity: .5; cursor: default; }
+@media (max-width: 40rem) { .chart-container { flex-direction: column; gap: 1rem; } #projects-pie-plot { flex-basis: auto; } .legend { width: 100%; } .filter-summary { flex-wrap: wrap; } }
+@media (prefers-reduced-motion: reduce) { #projects-pie-plot path { transition: none; } }

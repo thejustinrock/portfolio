@@ -11,6 +11,21 @@
 <body>
 <h1 class="projects-title">Projects</h1>
     <p class="intro">Explore my data engineering and data science projects.</p>
+    <section aria-labelledby="chart-heading">
+        <h2 id="chart-heading">Projects by year</h2>
+        <p class="chart-help">Select a slice or a year in the legend to filter projects. Select it again to show all years.</p>
+        <div class="chart-container">
+            <svg id="projects-pie-plot" viewBox="-50 -50 100 100" role="group" aria-label="Projects per year"></svg>
+            <ul class="legend" aria-label="Filter projects by year"></ul>
+        </div>
+        <p id="chart-empty" hidden>No projects match your search.</p>
+    </section>
+    <label for="project-search">Search projects</label>
+    <input id="project-search" class="searchBar" type="search" aria-label="Search projects" placeholder="Search titles, descriptions, years…" disabled>
+    <div class="filter-summary">
+        <p id="filter-status" role="status">Loading projects…</p>
+        <button id="clear-filters" type="button" disabled>Clear filters</button>
+    </div>
     <div class="projects" aria-live="polite">Loading projects…</div>
     <noscript>Enable JavaScript to view the project list.</noscript>
 
