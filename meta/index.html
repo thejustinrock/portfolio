@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meta - Justin Chanthabandith</title>
+  <link rel="stylesheet" href="../style.css">
+  <script type="module" src="../global.js"></script>
+  <script type="module" src="main.js"></script>
+</head>
+<body>
+  <main class="meta">
+    <h1>Portfolio code analysis</h1>
+    <p class="intro">Explore when I worked on this portfolio and which languages make up its code.</p>
+    <p id="meta-status" role="status">Loading commit history…</p>
+    <section id="code-summary" aria-labelledby="summary-heading" hidden>
+      <h2 id="summary-heading">Summary statistics</h2>
+      <div id="stats"></div>
+    </section>
+    <section id="commit-history" aria-labelledby="history-heading" hidden>
+      <h2 id="history-heading">Commits by date and time</h2>
+      <p class="chart-help" id="commit-help">Larger dots represent more lines attributed to a commit. Hover for details, or click a dot to open its commit on GitHub. Drag from an empty part of the chart to select several commits.</p>
+      <div id="commit-chart"></div>
+      <div class="filter-summary">
+        <p id="selection-count" role="status">No commits selected</p>
+        <button id="clear-selection" type="button" disabled>Clear selection</button>
+      </div>
+      <section id="selected-languages" aria-labelledby="languages-heading" hidden>
+        <h3 id="languages-heading">Languages in selected commits</h3>
+        <dl id="language-breakdown" class="stats"></dl>
+      </section>
+      <dl id="commit-tooltip" hidden>
+        <dt>Commit</dt><dd id="commit-id"></dd>
+        <dt>Date</dt><dd id="commit-date"></dd>
+        <dt>Time</dt><dd id="commit-time"></dd>
+        <dt>Author</dt><dd id="commit-author"></dd>
+        <dt>Lines</dt><dd id="commit-lines"></dd>
+      </dl>
+    </section>
+    <p class="chart-help">Source: Git blame via elocuent. The chart shows commits that last changed lines in the analyzed snapshot.</p>
+    <noscript>Enable JavaScript to explore the commit history.</noscript>
+  </main>
+  <footer>Justin Chanthabandith · Data Engineering &amp; Data Science</footer>
+</body>
+</html>

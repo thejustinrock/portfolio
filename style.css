@@ -78,3 +78,66 @@ select:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3
 button:disabled { opacity: .5; cursor: default; }
 @media (max-width: 40rem) { .chart-container { flex-direction: column; gap: 1rem; } #projects-pie-plot { flex-basis: auto; } .legend { width: 100%; } .filter-summary { flex-wrap: wrap; } }
 @media (prefers-reduced-motion: reduce) { #projects-pie-plot path { transition: none; } }
+
+/* Lab 6: portfolio commit history. */
+.meta {
+  --commit-color: light-dark(#245ca6, #82baff);
+  --commit-selected: light-dark(#b83c21, #ff9c7c);
+}
+.meta section + section { margin-top: 2.5rem; }
+.meta .stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(9rem, 100%), 1fr));
+  gap: .75rem;
+  margin: 0;
+}
+.meta .stats div {
+  padding: .75rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: .55rem;
+  background: var(--color-surface);
+}
+.meta dt { color: var(--color-muted); font-size: .85rem; }
+.meta dd { margin: .15rem 0 0; font-weight: 650; overflow-wrap: anywhere; }
+#commit-chart {
+  border: 1px solid var(--color-border);
+  border-radius: .75rem;
+}
+#commit-chart svg { display: block; width: 100%; }
+#commit-chart .tick text { font-size: 11px; }
+@media (max-width: 35rem) {
+  #commit-chart .tick text, #commit-chart .commit-axis-label { font-size: 17px; }
+}
+.commit-grid { color: var(--color-border); }
+.commit-grid .domain { display: none; }
+.commit-axis-label { fill: currentColor; text-anchor: middle; font-size: 12px; font-weight: 600; }
+.commit-dots circle { fill: var(--commit-color); fill-opacity: .62; stroke: canvas; stroke-width: 1; }
+.commit-dots .is-brushed { fill: var(--commit-selected); fill-opacity: 1; }
+.commit-dots a:hover circle, .commit-dots a:focus-visible circle {
+  fill-opacity: 1;
+  stroke: canvastext;
+  stroke-width: 2;
+}
+.commit-brush .selection {
+  fill: var(--commit-color);
+  fill-opacity: .14;
+  stroke: var(--commit-color);
+  stroke-dasharray: 4 3;
+}
+#clear-selection { flex-shrink: 0; padding: .5em .8em; }
+#commit-tooltip:not([hidden]) {
+  position: fixed;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: baseline;
+  gap: .2rem .8rem;
+  max-width: calc(100vw - 16px);
+  margin: 0;
+  padding: .7rem .9rem;
+  border: 1px solid var(--color-border);
+  border-radius: .5rem;
+  background: var(--color-surface);
+  box-shadow: 0 4px 16px #0003;
+  pointer-events: none;
+}
